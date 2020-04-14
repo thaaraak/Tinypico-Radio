@@ -84,7 +84,7 @@ class ADS1115(object):
 		self._WRITE_BUFFER[0] = register & 0xFF
 		self._WRITE_BUFFER[1] = val >> 8
 		self._WRITE_BUFFER[2] = val & 0xff
-		print("Write Reg:{0} = {1}:{2}".format(register, self._WRITE_BUFFER[1], self._WRITE_BUFFER[2]))
+		#print("Write Reg:{0} = {1}:{2}".format(register, self._WRITE_BUFFER[1], self._WRITE_BUFFER[2]))
 		self._i2c.writeto(self._i2c_addr, self._WRITE_BUFFER )
 
 	def readRegister(self, register):
@@ -93,7 +93,7 @@ class ADS1115(object):
 		self._i2c.writeto(self._i2c_addr, self._BUFFER)
 		self._i2c.readfrom_into(self._i2c_addr, self._READ_BUFFER)
 		return_value = ( self._READ_BUFFER[0] << 8 ) | self._READ_BUFFER[1]
-		print("Read Reg:{0} {1}:{2}".format(register, self._READ_BUFFER[0], self._READ_BUFFER[1]))
+		#print("Read Reg:{0} {1}:{2}".format(register, self._READ_BUFFER[0], self._READ_BUFFER[1]))
 		return return_value
 		
 	def readSingleEnded( self, channel=0 ):
