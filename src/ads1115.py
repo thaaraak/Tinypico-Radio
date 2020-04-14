@@ -6,13 +6,17 @@ _ADS1115_ADDRESS = const(0x48)
 _ADS1015_CONVERSIONDELAY = const(1)
 _ADS1115_CONVERSIONDELAY = const(9)
 
-_ADS1015_REG_CONFIG_PGA_6_144V = const(0x0000) # +/-6.144V range = Gain 2/3
-_ADS1015_REG_CONFIG_PGA_4_096V = const(0x0200) # +/-4.096V range = Gain 1
-_ADS1015_REG_CONFIG_PGA_2_048V = const(0x0400) # +/-2.048V range = Gain 2 (default)
-_ADS1015_REG_CONFIG_PGA_1_024V = const(0x0600) # +/-1.024V range = Gain 4
-_ADS1015_REG_CONFIG_PGA_0_512V = const(0x0800) # +/-0.512V range = Gain 8
-_ADS1015_REG_CONFIG_PGA_0_256V = const(0x0A00) # +/-0.256V range = Gain 16
+_DEFAULT_GAIN = 'Gain 2'
 
+_ADS1015_GAIN = {
+	'Gain 2/3': 0x0000,
+	'Gain 1': 0x0200,
+	_DEFAULT_GAIN: 0x0400,
+	'Gain 4': 0x0600,
+	'Gain 8': 0x0800,
+	'Gain 16': 0x0A00
+}
+	
 _ADS1015_REG_CONFIG_OS_MASK = const(0x8000) # OS Mask
 _ADS1015_REG_CONFIG_OS_SINGLE = const(0x8000) # Write: Set to start a single-conversion
 _ADS1015_REG_CONFIG_OS_BUSY = const(0x0000) # Read: Bit = 0 when conversion is in progress
@@ -68,7 +72,7 @@ _ADS1015_REG_POINTER_HITHRESH = const(0x03)  # High threshold
 
 class ADS1115(object):
 	
-	def __init__(self, data, clock, addr=_ADS1115_ADDRESS, conversion_delay=_ADS1115_CONVERSIONDELAY, bit_shift=0, gain=_ADS1015_REG_CONFIG_PGA_2_048V ):
+	def __init__(self, data, clock, gain=_DEFAULT_GAIN, addr=_ADS1115_ADDRESS, conversion_delay=_ADS1115_CONVERSIONDELAY, bit_shift=0 ):
         
 		self._i2c_addr = addr
 		self._i2c=I2C(freq=400000,scl=clock,sda=data)
@@ -77,7 +81,12 @@ class ADS1115(object):
 		self._BUFFER = bytearray(1)
 		self._conversion_delay = conversion_delay
 		self._bit_shift = bit_shift
-		self._gain = gain
+		
+		g = _ADS1015_GAIN.get(gain)
+		if g is None:
+			g = _ADS1015_GAIN.get(_DEFAULT_GAIN)
+		
+		self._gain = g
 
 	def writeRegister( self, register, val ):
         # Write an 16-bit unsigned value to the specified 8-bit address.
