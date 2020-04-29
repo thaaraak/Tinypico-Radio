@@ -202,6 +202,22 @@ class SI5351:
             #
             # self._si5351._write_u8(_SI5351_REGISTER_177_PLL_RESET, (1 << 7) | (1 << 5))
 
+        def _configure_registers_bulk(self, p1, p2, p3):
+
+            buf = bytearray(9)
+
+            buf[0] = self._base
+            buf[1] = (p3 & 0x0000FF00) >> 8
+            buf[2] = (p3 & 0x000000FF)
+            buf[3] = (p1 & 0x00030000) >> 16
+            buf[4] = (p1 & 0x0000FF00) >> 8
+            buf[5] = (p1 & 0x000000FF)
+            buf[6] = ((p3 & 0x000F0000) >> 12) | ((p2 & 0x000F0000) >> 16)
+            buf[7] = (p2 & 0x0000FF00) >> 8
+            buf[8] = (p2 & 0x000000FF)
+
+            self._si5351._write_bulk( buf )
+
         def configure_integer(self, multiplier):
             """Configure the PLL with a simple integer mulitplier for the most
             accurate (but more limited) PLL frequency generation.
@@ -232,7 +248,15 @@ class SI5351:
             multiplier = int(multiplier)
             numerator = int(numerator)
             denominator = int(denominator)
-            # Compute register values and configure them.
+            
+            """
+            Compute register values and configure them.
+            
+            p1 = 128 * a + ((128 * b) / c) - 512;
+            p2 = 128 * b - c * ((128 * b) / c);
+            p3 = c;
+            """
+            
             p1 = int(
                 128 * multiplier + math.floor(128 * ((numerator / denominator)) - 512)
             )
@@ -241,7 +265,8 @@ class SI5351:
                 - denominator * math.floor(128 * (numerator / denominator))
             )
             p3 = denominator
-            self._configure_registers(p1, p2, p3)
+            
+            self._configure_registers_bulk(p1, p2, p3)
             # Calculate exact frequency and store it for reference.
             fvco = _SI5351_CRYSTAL_FREQUENCY * (multiplier + (numerator / denominator))
             # This should actually take the floor to get the true value but
@@ -416,7 +441,7 @@ class SI5351:
     def __init__(self, data, clock, *, addr=_SI5351_ADDRESS):
         
         self.i2c_addr = addr
-        self.i2c=I2C(freq=100000,scl=clock,sda=data)
+        self.i2c=I2C(freq=400000,scl=clock,sda=data)
 
         self.oldmult = 0
 
@@ -495,7 +520,7 @@ class SI5351:
         numer = ( multiplier - intpart ) * denom
          
         pll.configure_fractional( intpart, numer, denom )
-        clock.configure_fractional( pll, mult, 0, 1000000 )
+        clock.configure_integer( pll, mult )
         
         #self.outputs_enabled = True
 
@@ -511,8 +536,12 @@ class SI5351:
         # Write an 8-bit unsigned value to the specified 8-bit address.
         self._BUFFER[0] = register & 0xFF
         self._BUFFER[1] = val & 0xFF
-        #print("Write Reg:{0} = {1}:{2}".format(register, self._BUFFER[0], self._BUFFER[1]))
+        print("Write Reg:{0} = {1}:{2}".format(register, self._BUFFER[0], self._BUFFER[1]))
         self.i2c.writeto(self.i2c_addr, self._BUFFER )
+
+    def _write_bulk(self, buf):
+        print("Write Reg:{0} = {1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}".format(buf[0], buf[1], buf[2], buf[3], buf[4], buf[5], buf[6], buf[7], buf[8]))
+        self.i2c.writeto(self.i2c_addr, buf )
 
     @property
     def outputs_enabled(self):

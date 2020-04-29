@@ -78,7 +78,7 @@ class Radio:
 		if ( self._mult != self._old_mult ):
 			self._si5351.set_phase( self._si5351.clock_2, self._si5351.pll_a, self._mult )
 
-		self.old_mult = self._mult
+		self._old_mult = self._mult
 		
 
 	def radixChanged( self, e ):
