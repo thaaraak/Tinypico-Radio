@@ -2,6 +2,7 @@ import machine
 from machine import Pin
 import time
 import math
+import si5351
 
 class Radio:
 
@@ -16,9 +17,9 @@ class Radio:
 	
 	STARTING_RADIX = const(2)
 	
-	def __init__(self, rbutton, encoder, lcd, si5351, frequency):
+	def __init__(self, rbutton, encoder, lcd, s, frequency):
 		self._encoder = encoder
-		self._si5351 = si5351
+		self._si5351 = s
 		self._frequency = frequency
 		self._radix = STARTING_RADIX
 		self._lcd = lcd
@@ -29,6 +30,9 @@ class Radio:
 		self._old_encoder_value = 0
 		self._old_rbutton_value = 1
 		self._old_mult = 0
+		
+		self._si5351.clock_0.drive_strength( si5351.STRENGTH_2MA )
+		self._si5351.clock_2.drive_strength( si5351.STRENGTH_2MA )
 		
 	def encoderChanged( self, e ):
 		
@@ -68,13 +72,13 @@ class Radio:
 		else:
 			self._mult = 30
 
-		self._si5351.set_frequency( self._frequency, self._si5351.clock_0, self._si5351.pll_b, self._mult )
-		self._si5351.set_frequency( self._frequency, self._si5351.clock_2, self._si5351.pll_b, self._mult )
+		self._si5351.set_frequency( self._frequency, self._si5351.clock_0, self._si5351.pll_a, self._mult )
+		self._si5351.set_frequency( self._frequency, self._si5351.clock_2, self._si5351.pll_a, self._mult )
 		
 		if ( self._mult != self._old_mult ):
 			self._si5351.set_phase( self._si5351.clock_2, self._si5351.pll_a, self._mult )
 
-		self.old_mult = self._mult
+		self._old_mult = self._mult
 		
 
 	def radixChanged( self, e ):

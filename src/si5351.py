@@ -117,7 +117,20 @@ _SI5351_REGISTER_168_CLK3_INITIAL_PHASE_OFFSET = const(168)
 _SI5351_REGISTER_169_CLK4_INITIAL_PHASE_OFFSET = const(169)
 _SI5351_REGISTER_170_CLK5_INITIAL_PHASE_OFFSET = const(170)
 _SI5351_REGISTER_177_PLL_RESET = const(177)
-_SI5351_REGISTER_183_CRYSTAL_INTERNAL_LOAD_CAPACITANCE = const(183)
+
+_SI5351_CLK_DRIVE_STRENGTH_MASK = const(3<<0)
+STRENGTH_2MA   = const(0<<0)
+STRENGTH_4MA   = const(1<<0)
+STRENGTH_6MA   = const(2<<0)
+STRENGTH_8MA   = const(3<<0)
+
+_SI5351_CRYSTAL_LOAD = const(183)
+_SI5351_CRYSTAL_LOAD_MASK = const(3<<6)
+SI5351_CRYSTAL_LOAD_0PF = const(0<<6)
+SI5351_CRYSTAL_LOAD_6PF = const(1<<6)
+SI5351_CRYSTAL_LOAD_8PF = const(2<<6)
+SI5351_CRYSTAL_LOAD_10PF = const(3<<6)
+
 
 SI5351_FREQ_MULT = const(100)
 SI5351_MULTISYNTH_DIVBY4_FREQ = const(150000000)
@@ -186,7 +199,24 @@ class SI5351:
             self._si5351._write_u8(self._base + 6, (p2 & 0x0000FF00) >> 8)
             self._si5351._write_u8(self._base + 7, (p2 & 0x000000FF))
             # Reset both PLLs.
-            self._si5351._write_u8(_SI5351_REGISTER_177_PLL_RESET, (1 << 7) | (1 << 5))
+            #
+            # self._si5351._write_u8(_SI5351_REGISTER_177_PLL_RESET, (1 << 7) | (1 << 5))
+
+        def _configure_registers_bulk(self, p1, p2, p3):
+
+            buf = bytearray(9)
+
+            buf[0] = self._base
+            buf[1] = (p3 & 0x0000FF00) >> 8
+            buf[2] = (p3 & 0x000000FF)
+            buf[3] = (p1 & 0x00030000) >> 16
+            buf[4] = (p1 & 0x0000FF00) >> 8
+            buf[5] = (p1 & 0x000000FF)
+            buf[6] = ((p3 & 0x000F0000) >> 12) | ((p2 & 0x000F0000) >> 16)
+            buf[7] = (p2 & 0x0000FF00) >> 8
+            buf[8] = (p2 & 0x000000FF)
+
+            self._si5351._write_bulk( buf )
 
         def configure_integer(self, multiplier):
             """Configure the PLL with a simple integer mulitplier for the most
@@ -218,7 +248,15 @@ class SI5351:
             multiplier = int(multiplier)
             numerator = int(numerator)
             denominator = int(denominator)
-            # Compute register values and configure them.
+            
+            """
+            Compute register values and configure them.
+            
+            p1 = 128 * a + ((128 * b) / c) - 512;
+            p2 = 128 * b - c * ((128 * b) / c);
+            p3 = c;
+            """
+            
             p1 = int(
                 128 * multiplier + math.floor(128 * ((numerator / denominator)) - 512)
             )
@@ -227,7 +265,8 @@ class SI5351:
                 - denominator * math.floor(128 * (numerator / denominator))
             )
             p3 = denominator
-            self._configure_registers(p1, p2, p3)
+            
+            self._configure_registers_bulk(p1, p2, p3)
             # Calculate exact frequency and store it for reference.
             fvco = _SI5351_CRYSTAL_FREQUENCY * (multiplier + (numerator / denominator))
             # This should actually take the floor to get the true value but
@@ -248,6 +287,8 @@ class SI5351:
             self._phase = phase
             self._pll = None
             self._divider = None
+            
+            self.olddivider = 0
 
         @property
         def frequency(self):
@@ -308,6 +349,13 @@ class SI5351:
             reg_value |= divider
             self._si5351._write_u8(self._r, reg_value)
 
+        def drive_strength( self, s ):
+            control = self._si5351._read_u8(self._control)
+            control &= ~(_SI5351_CLK_DRIVE_STRENGTH_MASK)
+            control |= s
+            self._si5351._write_u8(self._control, control)
+
+
         def _configure_registers(self, p1, p2, p3):
             # Update MSx registers.
             self._si5351._write_u8(self._base, (p3 & 0x0000FF00) >> 8)
@@ -327,6 +375,9 @@ class SI5351:
             divider.  This is the most accurate way to set the clock output
             frequency but supports less of a range of values.
             """
+            if divider == self.olddivider:
+                return
+            
             assert 3 < divider < 901
             divider = int(divider)
             # Make sure the PLL is configured (has a frequency set).
@@ -336,15 +387,16 @@ class SI5351:
             p2 = 0
             p3 = 1
             self._configure_registers(p1, p2, p3)
-            # Configure the clock control register.
-            control = 0x0F  # 8mA drive strength, MS0 as CLK0 source,
-            # Clock not inverted, powered up
+            
+            control = self._si5351._read_u8(self._control)
             control |= pll.clock_control_enabled
-            control |= 1 << 6  # Enable integer mode.
+            control |= 1 << 6
             self._si5351._write_u8(self._control, control)
+
             # Store the PLL and divisor value so frequency can be calculated.
             self._pll = pll
             self._divider = divider
+            self.olddivider = divider
 
         def configure_fractional(self, pll, divider, numerator, denominator):
             """Configure the clock output with the specified PLL source
@@ -368,11 +420,11 @@ class SI5351:
             )
             p3 = denominator
             self._configure_registers(p1, p2, p3)
-            # Configure the clock control register.
-            control = 0x0F  # 8mA drive strength, MS0 as CLK0 source,
-            # Clock not inverted, powered up
+
+            control = self._si5351._read_u8(self._control)
             control |= pll.clock_control_enabled
             self._si5351._write_u8(self._control, control)
+
             # Store the PLL and divisor value so frequency can be calculated.
             self._pll = pll
             self._divider = divider + (numerator / denominator)
@@ -389,8 +441,9 @@ class SI5351:
     def __init__(self, data, clock, *, addr=_SI5351_ADDRESS):
         
         self.i2c_addr = addr
-        self.i2c=I2C(freq=100000,scl=clock,sda=data)
+        self.i2c=I2C(freq=400000,scl=clock,sda=data)
 
+        self.oldmult = 0
 
         while True:
             status = self._read_u8( _SI5351_REGISTER_0_DEVICE_STATUS )
@@ -400,6 +453,7 @@ class SI5351:
         # Setup the SI5351.
         # Disable all outputs setting CLKx_DIS high.
         self._write_u8(_SI5351_REGISTER_3_OUTPUT_ENABLE_CONTROL, 0xFF)
+        self._write_u8(_SI5351_CRYSTAL_LOAD, ( SI5351_CRYSTAL_LOAD_8PF & _SI5351_CRYSTAL_LOAD_MASK) | 0b00010010)
 
         # Power down all output drivers
         self._write_u8(_SI5351_REGISTER_16_CLK0_CONTROL, 0x80)
@@ -410,6 +464,16 @@ class SI5351:
         self._write_u8(_SI5351_REGISTER_21_CLK5_CONTROL, 0x80)
         self._write_u8(_SI5351_REGISTER_22_CLK6_CONTROL, 0x80)
         self._write_u8(_SI5351_REGISTER_23_CLK7_CONTROL, 0x80)
+
+        # Turn the clocks back on
+        self._write_u8(_SI5351_REGISTER_16_CLK0_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_17_CLK1_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_18_CLK2_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_19_CLK3_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_20_CLK4_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_21_CLK5_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_22_CLK6_CONTROL, 0x0c)
+        self._write_u8(_SI5351_REGISTER_23_CLK7_CONTROL, 0x0c)
         
         # Initialize PLL A and B objects.
         self.pll_a = self._PLL(self, 26, 0)
@@ -437,11 +501,14 @@ class SI5351:
             _SI5351_REGISTER_167_CLK2_INITIAL_PHASE_OFFSET
         )
 
+    
+
     def set_phase( self, clock, pll, phase ):
         
        	phase = phase & 0b01111111;
         self._write_u8(clock.phase, phase);
         self._write_u8(_SI5351_REGISTER_177_PLL_RESET, (1 << 7) | (1 << 5))
+        self.outputs_enabled = True
 
 
     def set_frequency( self, freq, clock, pll, mult ):
@@ -454,22 +521,27 @@ class SI5351:
          
         pll.configure_fractional( intpart, numer, denom )
         clock.configure_integer( pll, mult )
-        self.outputs_enabled = True
+        
+        #self.outputs_enabled = True
 
     def _read_u8(self, register):
         # Read an 8-bit unsigned value from the specified 8-bit address.
         self._BUFFER[0] = register & 0xFF
         self.i2c.writeto(self.i2c_addr, self._BUFFER)
         self.i2c.readfrom_into(self.i2c_addr, self._READ_BUFFER)
-        #print("Read Reg:{0} {1}".format(register, self._READ_BUFFER[0]))
+        print("Read Reg:{0} {1}".format(register, self._READ_BUFFER[0]))
         return self._READ_BUFFER[0]
 
     def _write_u8(self, register, val):
         # Write an 8-bit unsigned value to the specified 8-bit address.
         self._BUFFER[0] = register & 0xFF
         self._BUFFER[1] = val & 0xFF
-        #print("Write Reg:{0} = {1}:{2}".format(register, self._BUFFER[0], self._BUFFER[1]))
+        print("Write Reg:{0} = {1}:{2}".format(register, self._BUFFER[0], self._BUFFER[1]))
         self.i2c.writeto(self.i2c_addr, self._BUFFER )
+
+    def _write_bulk(self, buf):
+        print("Write Reg:{0} = {1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}".format(buf[0], buf[1], buf[2], buf[3], buf[4], buf[5], buf[6], buf[7], buf[8]))
+        self.i2c.writeto(self.i2c_addr, buf )
 
     @property
     def outputs_enabled(self):
