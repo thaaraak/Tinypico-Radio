@@ -47,7 +47,6 @@ Wire Wire Line
 	9350 6050 9350 5850
 Wire Wire Line
 	1750 3050 1750 2650
-Connection ~ 1750 2650
 Connection ~ 1750 3050
 Wire Wire Line
 	2150 3650 2350 3650
@@ -70,8 +69,6 @@ Connection ~ 3550 3150
 Connection ~ 3550 3050
 Connection ~ 2350 3150
 Wire Wire Line
-	1350 2650 1350 2850
-Wire Wire Line
 	1350 2850 1350 3050
 Wire Wire Line
 	1350 3050 1350 3250
@@ -79,14 +76,10 @@ Wire Wire Line
 	1550 2850 1350 2850
 Wire Wire Line
 	950  2150 1350 2150
-Wire Wire Line
-	1350 2150 1350 2650
 Connection ~ 1350 2850
 Connection ~ 1350 3050
-Connection ~ 1350 2650
 Wire Wire Line
 	3950 3050 3950 2650
-Connection ~ 3950 2650
 Connection ~ 3950 3050
 Wire Wire Line
 	4550 3650 4550 3150
@@ -186,28 +179,6 @@ Connection ~ 10550 6550
 Connection ~ 10550 6450
 Connection ~ 10450 6550
 $Comp
-L phase_v3-eagle-import:TRIMPOT-PTH-10MM-KNOB-1_2W-10% VR1
-U 1 1 59870719
-P 1550 2650
-F 0 "VR1" V 1490 2750 70  0000 L BNN
-F 1 "50k" V 1610 2750 70  0000 L TNN
-F 2 "phase v3:TRIMPOT-PTH-3386U" H 1550 2650 50  0001 C CNN
-F 3 "" H 1550 2650 50  0001 C CNN
-	1    1550 2650
-	0    1    1    0   
-$EndComp
-$Comp
-L phase_v3-eagle-import:TRIMPOT-PTH-10MM-KNOB-1_2W-10% VR2
-U 1 1 B7B7B6A6
-P 3750 2650
-F 0 "VR2" V 3690 2750 70  0000 L BNN
-F 1 "500k" V 3810 2750 70  0000 L TNN
-F 2 "phase v3:TRIMPOT-PTH-3386U" H 3750 2650 50  0001 C CNN
-F 3 "" H 3750 2650 50  0001 C CNN
-	1    3750 2650
-	0    1    1    0   
-$EndComp
-$Comp
 L phase_v3-eagle-import:GND #GND03
 U 1 1 21137572
 P 2050 2750
@@ -249,17 +220,6 @@ F 1 "GND" H 4250 1240 59  0000 C TNN
 F 2 "" H 4250 1250 50  0001 C CNN
 F 3 "" H 4250 1250 50  0001 C CNN
 	1    4250 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L phase_v3-eagle-import:TRIMPOT-PTH-10MM-KNOB-1_2W-10% VR3
-U 1 1 FE92FEBC
-P 4850 2450
-F 0 "VR3" V 4790 2550 70  0000 L BNN
-F 1 "500" V 4910 2550 70  0000 L TNN
-F 2 "phase v3:TRIMPOT-PTH-3386U" H 4850 2450 50  0001 C CNN
-F 3 "" H 4850 2450 50  0001 C CNN
-	1    4850 2450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -532,7 +492,7 @@ U 1 1 449C7C68
 P 750 2250
 F 0 "J1" H 550 2470 70  0000 L BNN
 F 1 "AUDIO_JACK_3.5MM_KIT" H 550 1950 70  0000 L BNN
-F 2 "phase v3:AUDIO-JACK-KIT" H 750 2250 50  0001 C CNN
+F 2 "Xenir:Audio_Jack" H 750 2250 50  0001 C CNN
 F 3 "" H 750 2250 50  0001 C CNN
 	1    750  2250
 	1    0    0    -1  
@@ -642,7 +602,7 @@ U 1 1 C3E76336
 P 10750 6550
 F 0 "J2" H 10550 6770 70  0000 L BNN
 F 1 "AUDIO_JACK_3.5MM_KIT" H 10550 6250 70  0000 L BNN
-F 2 "phase v3:AUDIO-JACK-KIT" H 10750 6550 50  0001 C CNN
+F 2 "Xenir:Audio_Jack" H 10750 6550 50  0001 C CNN
 F 3 "" H 10750 6550 50  0001 C CNN
 	1    10750 6550
 	-1   0    0    1   
@@ -1143,4 +1103,44 @@ F 3 "" H 8950 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 8950 5750
+$Comp
+L Xenir:Trimpot VR1
+U 1 1 5EACCC22
+P 1550 2500
+F 0 "VR1" H 1550 2555 50  0000 C CNN
+F 1 "Trimpot" H 1550 2464 50  0000 C CNN
+F 2 "Xenir:Trimpot" H 1400 2200 50  0001 C CNN
+F 3 "" H 1400 2200 50  0001 C CNN
+	1    1550 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 2150 1350 2650
+Connection ~ 1350 2650
+Wire Wire Line
+	1350 2650 1350 2850
+Connection ~ 1750 2650
+$Comp
+L Xenir:Trimpot VR2
+U 1 1 5EAD5686
+P 3750 2500
+F 0 "VR2" H 3750 2555 50  0000 C CNN
+F 1 "Trimpot" H 3750 2464 50  0000 C CNN
+F 2 "Xenir:Trimpot" H 3600 2200 50  0001 C CNN
+F 3 "" H 3600 2200 50  0001 C CNN
+	1    3750 2500
+	1    0    0    -1  
+$EndComp
+Connection ~ 3950 2650
+$Comp
+L Xenir:Trimpot VR3
+U 1 1 5EADCA51
+P 4700 2450
+F 0 "VR3" V 4746 2367 50  0000 L CNN
+F 1 "Trimpot" V 4655 2367 50  0000 L CNN
+F 2 "Xenir:Trimpot" H 4550 2150 50  0001 C CNN
+F 3 "" H 4550 2150 50  0001 C CNN
+	1    4700 2450
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
