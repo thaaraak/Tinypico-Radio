@@ -38,13 +38,13 @@ $EndComp
 $Comp
 L Xenir:Capacitor C5
 U 1 1 5E9FBB07
-P 8450 1550
-F 0 "C5" H 8565 1146 50  0000 L CNN
-F 1 ".1uF" H 8565 1055 50  0000 L CNN
-F 2 "Xenir:Capacitor 1206" H 8450 1550 50  0001 C CNN
-F 3 "" H 8450 1550 50  0001 C CNN
-	1    8450 1550
-	1    0    0    -1  
+P 8950 2000
+F 0 "C5" H 9065 1596 50  0000 L CNN
+F 1 ".1uF" H 9065 1505 50  0000 L CNN
+F 2 "Xenir:Capacitor 1206" H 8950 2000 50  0001 C CNN
+F 3 "" H 8950 2000 50  0001 C CNN
+	1    8950 2000
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	8200 1850 8450 1850
@@ -66,11 +66,7 @@ F 3 "" H 8450 2150 50  0001 C CNN
 $EndComp
 Connection ~ 8450 2150
 Wire Wire Line
-	8450 2150 9050 2150
-Wire Wire Line
 	8950 1650 8950 1850
-Wire Wire Line
-	8950 1850 9050 1850
 Wire Wire Line
 	8200 1650 8700 1650
 Wire Wire Line
@@ -91,39 +87,27 @@ $EndComp
 $Comp
 L Xenir:Capacitor C7
 U 1 1 5EA05D6A
-P 9850 1550
-F 0 "C7" H 9965 1146 50  0000 L CNN
-F 1 "100uF" H 9965 1055 50  0000 L CNN
-F 2 "Capacitors:CPOL-RADIAL-2.5MM-5MM" H 9850 1550 50  0001 C CNN
-F 3 "" H 9850 1550 50  0001 C CNN
-	1    9850 1550
-	1    0    0    -1  
+P 9900 2000
+F 0 "C7" H 10015 1596 50  0000 L CNN
+F 1 "100uF" H 10015 1505 50  0000 L CNN
+F 2 "Capacitors:CPOL-RADIAL-2.5MM-5MM" H 9900 2000 50  0001 C CNN
+F 3 "" H 9900 2000 50  0001 C CNN
+	1    9900 2000
+	0    -1   -1   0   
 $EndComp
-Connection ~ 9850 2150
 $Comp
 L Xenir:Capacitor C6
 U 1 1 5EA063C0
-P 9050 1550
-F 0 "C6" H 9165 1146 50  0000 L CNN
-F 1 "22uF" H 9165 1055 50  0000 L CNN
-F 2 "Capacitors:CPOL-RADIAL-2.5MM-5MM" H 9050 1550 50  0001 C CNN
-F 3 "" H 9050 1550 50  0001 C CNN
-	1    9050 1550
-	1    0    0    -1  
+P 8450 2000
+F 0 "C6" H 8565 1596 50  0000 L CNN
+F 1 "22uF" H 8565 1505 50  0000 L CNN
+F 2 "Capacitors:CPOL-RADIAL-2.5MM-5MM" H 8450 2000 50  0001 C CNN
+F 3 "" H 8450 2000 50  0001 C CNN
+	1    8450 2000
+	0    -1   -1   0   
 $EndComp
-Connection ~ 9050 1850
-Wire Wire Line
-	9050 1850 9150 1850
-Connection ~ 9050 2150
-Wire Wire Line
-	9750 1850 9850 1850
-Connection ~ 9850 1850
-Wire Wire Line
-	9850 1850 10250 1850
 Wire Wire Line
 	10350 1950 10350 2150
-Wire Wire Line
-	9850 2150 10350 2150
 $Comp
 L power:+12V #PWR0101
 U 1 1 5EA259C0
@@ -187,13 +171,13 @@ Wire Wire Line
 $Comp
 L Xenir:Capacitor C8
 U 1 1 5EA383DE
-P 8950 2600
-F 0 "C8" H 9065 2196 50  0000 L CNN
-F 1 ".1uF" H 9065 2105 50  0000 L CNN
-F 2 "Xenir:Capacitor 1206" H 8950 2600 50  0001 C CNN
-F 3 "" H 8950 2600 50  0001 C CNN
-	1    8950 2600
-	1    0    0    -1  
+P 8950 3050
+F 0 "C8" H 9065 2646 50  0000 L CNN
+F 1 ".1uF" H 9065 2555 50  0000 L CNN
+F 2 "Xenir:Capacitor 1206" H 8950 3050 50  0001 C CNN
+F 3 "" H 8950 3050 50  0001 C CNN
+	1    8950 3050
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0104
@@ -287,65 +271,57 @@ Wire Wire Line
 $Comp
 L Xenir:Capacitor C9
 U 1 1 5EA6792B
-P 4900 3300
-F 0 "C9" H 5015 2896 50  0000 L CNN
-F 1 "470nF" H 5015 2805 50  0000 L CNN
-F 2 "Xenir:Capacitor 0805" H 4900 3300 50  0001 C CNN
-F 3 "" H 4900 3300 50  0001 C CNN
-	1    4900 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Xenir:Capacitor C10
-U 1 1 5EA68A05
 P 4900 3750
-F 0 "C10" H 5015 3346 50  0000 L CNN
+F 0 "C9" H 5015 3346 50  0000 L CNN
 F 1 "470nF" H 5015 3255 50  0000 L CNN
 F 2 "Xenir:Capacitor 0805" H 4900 3750 50  0001 C CNN
 F 3 "" H 4900 3750 50  0001 C CNN
 	1    4900 3750
-	1    0    0    -1  
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Xenir:Capacitor C10
+U 1 1 5EA68A05
+P 4900 4200
+F 0 "C10" H 5015 3796 50  0000 L CNN
+F 1 "470nF" H 5015 3705 50  0000 L CNN
+F 2 "Xenir:Capacitor 0805" H 4900 4200 50  0001 C CNN
+F 3 "" H 4900 4200 50  0001 C CNN
+	1    4900 4200
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Xenir:Capacitor C11
 U 1 1 5EA6950B
-P 4900 4250
-F 0 "C11" H 5015 3846 50  0000 L CNN
-F 1 "470nF" H 5015 3755 50  0000 L CNN
-F 2 "Xenir:Capacitor 0805" H 4900 4250 50  0001 C CNN
-F 3 "" H 4900 4250 50  0001 C CNN
-	1    4900 4250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Xenir:Capacitor C12
-U 1 1 5EA69901
 P 4900 4700
-F 0 "C12" H 5015 4296 50  0000 L CNN
+F 0 "C11" H 5015 4296 50  0000 L CNN
 F 1 "470nF" H 5015 4205 50  0000 L CNN
 F 2 "Xenir:Capacitor 0805" H 4900 4700 50  0001 C CNN
 F 3 "" H 4900 4700 50  0001 C CNN
 	1    4900 4700
-	1    0    0    -1  
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Xenir:Capacitor C12
+U 1 1 5EA69901
+P 4900 5150
+F 0 "C12" H 5015 4746 50  0000 L CNN
+F 1 "470nF" H 5015 4655 50  0000 L CNN
+F 2 "Xenir:Capacitor 0805" H 4900 5150 50  0001 C CNN
+F 3 "" H 4900 5150 50  0001 C CNN
+	1    4900 5150
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	6650 4650 5900 4650
 Wire Wire Line
 	5900 4650 5900 3600
 Wire Wire Line
-	5900 3600 4900 3600
-Wire Wire Line
 	6750 4750 5800 4750
 Wire Wire Line
 	5800 4750 5800 4050
 Wire Wire Line
-	4900 4050 5800 4050
-Wire Wire Line
-	6550 4550 4900 4550
-Wire Wire Line
 	5650 4850 5650 5000
-Wire Wire Line
-	5650 5000 4900 5000
 Wire Wire Line
 	5650 4850 6850 4850
 $Comp
@@ -436,18 +412,6 @@ F 3 "~" H 4250 5000 50  0001 C CNN
 	1    4250 5000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4350 3600 4900 3600
-Connection ~ 4900 3600
-Wire Wire Line
-	4350 4050 4900 4050
-Connection ~ 4900 4050
-Wire Wire Line
-	4350 4550 4900 4550
-Connection ~ 4900 4550
-Wire Wire Line
-	4350 5000 4900 5000
-Connection ~ 4900 5000
 $Comp
 L Xenir:LM358 U3
 U 1 1 5EA9F5A6
@@ -530,13 +494,13 @@ $EndComp
 $Comp
 L Xenir:Capacitor C13
 U 1 1 5EAC8FB2
-P 9700 2300
-F 0 "C13" H 9815 1896 50  0000 L CNN
-F 1 ".1uF" H 9815 1805 50  0000 L CNN
-F 2 "Xenir:Capacitor 1206" H 9700 2300 50  0001 C CNN
-F 3 "" H 9700 2300 50  0001 C CNN
-	1    9700 2300
-	1    0    0    -1  
+P 9700 2750
+F 0 "C13" H 9815 2346 50  0000 L CNN
+F 1 ".1uF" H 9815 2255 50  0000 L CNN
+F 2 "Xenir:Capacitor 1206" H 9700 2750 50  0001 C CNN
+F 3 "" H 9700 2750 50  0001 C CNN
+	1    9700 2750
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	9700 2600 9700 2450
@@ -573,13 +537,13 @@ $EndComp
 $Comp
 L Xenir:Capacitor C15
 U 1 1 5EADF0CD
-P 4000 4150
-F 0 "C15" H 4115 3746 50  0000 L CNN
-F 1 "1nF" H 4115 3655 50  0000 L CNN
-F 2 "Xenir:Capacitor 0805" H 4000 4150 50  0001 C CNN
-F 3 "" H 4000 4150 50  0001 C CNN
-	1    4000 4150
-	0    1    1    0   
+P 3550 4150
+F 0 "C15" H 3665 3746 50  0000 L CNN
+F 1 "1nF" H 3665 3655 50  0000 L CNN
+F 2 "Xenir:Capacitor 0805" H 3550 4150 50  0001 C CNN
+F 3 "" H 3550 4150 50  0001 C CNN
+	1    3550 4150
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3700 3150 3850 3150
@@ -631,13 +595,13 @@ Wire Wire Line
 $Comp
 L Xenir:Capacitor C14
 U 1 1 5EADE1CD
-P 4000 3150
-F 0 "C14" H 4115 2746 50  0000 L CNN
-F 1 "1nF" H 4115 2655 50  0000 L CNN
-F 2 "Xenir:Capacitor 0805" H 4000 3150 50  0001 C CNN
-F 3 "" H 4000 3150 50  0001 C CNN
-	1    4000 3150
-	0    1    1    0   
+P 3550 3150
+F 0 "C14" H 3665 2746 50  0000 L CNN
+F 1 "1nF" H 3665 2655 50  0000 L CNN
+F 2 "Xenir:Capacitor 0805" H 3550 3150 50  0001 C CNN
+F 3 "" H 3550 3150 50  0001 C CNN
+	1    3550 3150
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7450 1750 7050 1750
@@ -738,17 +702,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 2550 4000 2550
 Wire Wire Line
-	4750 1700 4750 1950
-Connection ~ 4750 1700
-Wire Wire Line
 	4750 1950 4850 1950
-Wire Wire Line
-	4750 1450 4750 1700
-Wire Wire Line
-	4450 1700 4450 1450
-Connection ~ 4450 1700
-Wire Wire Line
-	4450 1950 4450 1700
 $Comp
 L Xenir:T37_XFRM T2
 U 1 1 5E9E9ADC
@@ -774,46 +728,46 @@ $EndComp
 $Comp
 L Xenir:Capacitor C3
 U 1 1 5E9E8D24
-P 5050 1450
-F 0 "C3" V 4798 1000 50  0000 C CNN
-F 1 "5pF" V 4889 1000 50  0000 C CNN
-F 2 "Xenir:Capacitor" H 5050 1450 50  0001 C CNN
-F 3 "" H 5050 1450 50  0001 C CNN
-	1    5050 1450
-	0    1    1    0   
+P 4600 1450
+F 0 "C3" V 4348 1000 50  0000 C CNN
+F 1 "5pF" V 4439 1000 50  0000 C CNN
+F 2 "Xenir:Capacitor" H 4600 1450 50  0001 C CNN
+F 3 "" H 4600 1450 50  0001 C CNN
+	1    4600 1450
+	1    0    0    -1  
 $EndComp
 $Comp
 L Xenir:Capacitor C4
 U 1 1 5E9E81AF
-P 5050 1700
-F 0 "C4" V 4798 1250 50  0000 C CNN
-F 1 "10pF" V 4889 1250 50  0000 C CNN
-F 2 "Xenir:Capacitor" H 5050 1700 50  0001 C CNN
-F 3 "" H 5050 1700 50  0001 C CNN
-	1    5050 1700
-	0    1    1    0   
+P 4600 1950
+F 0 "C4" V 4348 1500 50  0000 C CNN
+F 1 "10pF" V 4439 1500 50  0000 C CNN
+F 2 "Xenir:Capacitor" H 4600 1950 50  0001 C CNN
+F 3 "" H 4600 1950 50  0001 C CNN
+	1    4600 1950
+	1    0    0    -1  
 $EndComp
 $Comp
 L Xenir:Capacitor C2
 U 1 1 5E9E7736
-P 4850 1800
-F 0 "C2" H 4965 1396 50  0000 L CNN
-F 1 "150pF" H 4965 1305 50  0000 L CNN
-F 2 "Xenir:Capacitor" H 4850 1800 50  0001 C CNN
-F 3 "" H 4850 1800 50  0001 C CNN
-	1    4850 1800
-	1    0    0    -1  
+P 4850 2250
+F 0 "C2" H 4965 1846 50  0000 L CNN
+F 1 "150pF" H 4965 1755 50  0000 L CNN
+F 2 "Xenir:Capacitor" H 4850 2250 50  0001 C CNN
+F 3 "" H 4850 2250 50  0001 C CNN
+	1    4850 2250
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Xenir:Capacitor C1
 U 1 1 5E9E667F
-P 4350 1800
-F 0 "C1" H 4465 1396 50  0000 L CNN
-F 1 "150pF" H 4465 1305 50  0000 L CNN
-F 2 "Xenir:Capacitor" H 4350 1800 50  0001 C CNN
-F 3 "" H 4350 1800 50  0001 C CNN
-	1    4350 1800
-	1    0    0    -1  
+P 4350 2250
+F 0 "C1" H 4465 1846 50  0000 L CNN
+F 1 "150pF" H 4465 1755 50  0000 L CNN
+F 2 "Xenir:Capacitor" H 4350 2250 50  0001 C CNN
+F 3 "" H 4350 2250 50  0001 C CNN
+	1    4350 2250
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Xenir:Trimcap VC1
@@ -1299,11 +1253,7 @@ F 3 "http://www.fairchildsemi.com/ds/LM/LM7805.pdf" H 9450 1800 50  0001 C CNN
 	1    9450 1850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9050 2150 9450 2150
 Connection ~ 9450 2150
-Wire Wire Line
-	9450 2150 9850 2150
 $Comp
 L power:+3.3V #PWR0115
 U 1 1 5EA68075
@@ -1316,4 +1266,48 @@ F 3 "" H 14250 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 14250 4100
+Wire Wire Line
+	8450 2150 8950 2150
+Wire Wire Line
+	8950 1850 9150 1850
+Wire Wire Line
+	9750 1850 9900 1850
+Wire Wire Line
+	9450 2150 9900 2150
+Wire Wire Line
+	4350 3600 4900 3600
+Wire Wire Line
+	4350 4050 4900 4050
+Wire Wire Line
+	4350 4550 4900 4550
+Wire Wire Line
+	4350 5000 4900 5000
+Wire Wire Line
+	4750 1450 4750 1950
+Wire Wire Line
+	4450 1450 4450 1950
+Connection ~ 9900 1850
+Wire Wire Line
+	9900 1850 10250 1850
+Connection ~ 9900 2150
+Wire Wire Line
+	9900 2150 10350 2150
+Connection ~ 8950 1850
+Connection ~ 8950 2150
+Wire Wire Line
+	8950 2150 9450 2150
+Connection ~ 4900 5000
+Wire Wire Line
+	4900 5000 5650 5000
+Connection ~ 4900 4550
+Wire Wire Line
+	4900 4550 6550 4550
+Connection ~ 4900 4050
+Wire Wire Line
+	4900 4050 5800 4050
+Connection ~ 4900 3600
+Wire Wire Line
+	4900 3600 5900 3600
+Connection ~ 4450 1950
+Connection ~ 4750 1950
 $EndSCHEMATC
