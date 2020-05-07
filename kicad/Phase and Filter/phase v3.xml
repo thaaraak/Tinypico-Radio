@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Caliphax\Documents\GitHub\Tinypico-Radio\kicad\Phase and Filter\phase v3.sch</source>
+    <date>5/6/2020 8:01:40 PM</date>
+    <tool>Eeschema (5.1.5)-3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>phase v3.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>1AC82AE2</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>0519A9DB</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>117AC6CD</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>DE24DD86</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>2.32k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>DC3A76EB</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>.010uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>876B59C0</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>.010uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6DDCC8ED</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>28k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>09523556</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>1k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4285394A</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>1k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>D4B20DCE</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>10nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E69E6156</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>1B34BBCF</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>A9197B93</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>8C4D7660</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>E6A22F71</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>3.3k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>37A1474B</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>9.53k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FC72806</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>115k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>B13F4994</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>LM358DIP08-SOIC</value>
+      <footprint>Xenir:SO08</footprint>
+      <libsource lib="Xenir" part="LM358" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>AA9079E4</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>LM358DIP08-SOIC</value>
+      <footprint>Xenir:SO08</footprint>
+      <libsource lib="Xenir" part="LM358" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>94FABF20</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>AUDIO_JACK_3.5MM_KIT</value>
+      <footprint>Xenir:Audio_Jack</footprint>
+      <libsource lib="phase_v3-eagle-import" part="AUDIO_JACK_3.5MM_KIT" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>449C7C68</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B8E32D7</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57B86B78</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>1k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>DB22EEEA</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>120k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>84065902</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>LM358</value>
+      <footprint>Xenir:SO08</footprint>
+      <libsource lib="Xenir" part="LM358" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4E0AB7A5</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>AC3F9421</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>74426261</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>1nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>056CA9CE</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>AUDIO_JACK_3.5MM_KIT</value>
+      <footprint>Xenir:Audio_Jack</footprint>
+      <libsource lib="phase_v3-eagle-import" part="AUDIO_JACK_3.5MM_KIT" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>C3E76336</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>10uF</value>
+      <footprint>Capacitors:CPOL-RADIAL-2.5MM-5MM</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>222DAB49</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>10uF</value>
+      <footprint>Capacitors:CPOL-RADIAL-2.5MM-5MM</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>BE642B3C</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>BD027223</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB23292</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>33k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB2770B</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>1nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB28833</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>1nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB291F5</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>100k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB2BCEA</tstamp>
+    </comp>
+    <comp ref="R20">
+      <value>68k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB2DE10</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>68k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB5CA7F</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>1.5nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB5CA85</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>1.5nF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="C5_3.5" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB5CA8B</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>220k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB5CA91</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>150k</value>
+      <footprint>Xenir:Resistor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB5CA97</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>LM358</value>
+      <footprint>Xenir:SO08</footprint>
+      <libsource lib="Xenir" part="LM358" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EB8B8AE</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>.1uF</value>
+      <footprint>Xenir:Capacitor 0805</footprint>
+      <libsource lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>740E3A5B</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>Pad</value>
+      <footprint>Xenir:Pad</footprint>
+      <libsource lib="Xenir" part="Pad" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EBB8242</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>Pad</value>
+      <footprint>Xenir:Pad</footprint>
+      <libsource lib="Xenir" part="Pad" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EBB92C3</tstamp>
+    </comp>
+    <comp ref="VR1">
+      <value>Trimpot</value>
+      <footprint>Xenir:Trimpot</footprint>
+      <libsource lib="Xenir" part="Trimpot" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EACCC22</tstamp>
+    </comp>
+    <comp ref="VR2">
+      <value>Trimpot</value>
+      <footprint>Xenir:Trimpot</footprint>
+      <libsource lib="Xenir" part="Trimpot" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EAD5686</tstamp>
+    </comp>
+    <comp ref="VR3">
+      <value>Trimpot</value>
+      <footprint>Xenir:Trimpot</footprint>
+      <libsource lib="Xenir" part="Trimpot" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5EADCA51</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Xenir" part="LM358">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM358</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="output"/>
+        <pin num="2" name="-IN" type="input"/>
+        <pin num="3" name="+IN" type="input"/>
+        <pin num="4" name="P$V-" type="BiDi"/>
+        <pin num="5" name="+IN" type="input"/>
+        <pin num="6" name="-IN" type="input"/>
+        <pin num="7" name="OUT" type="output"/>
+        <pin num="8" name="P$V+" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Xenir" part="Pad">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Pad</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Xenir" part="Trimpot">
+      <fields>
+        <field name="Reference">VR</field>
+        <field name="Value">Trimpot</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CW" type="passive"/>
+        <pin num="2" name="WIPER" type="passive"/>
+        <pin num="3" name="CCW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="phase_v3-eagle-import" part="0.3OHM-0805-1_8W-1%">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">0.3OHM-0805-1_8W-1%</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="phase_v3-eagle-import" part="1.0UF-0805-25V-(+80_-20%)">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1.0UF-0805-25V-(+80_-20%)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="phase_v3-eagle-import" part="AUDIO_JACK_3.5MM_KIT">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">AUDIO_JACK_3.5MM_KIT</field>
+      </fields>
+      <pins>
+        <pin num="RING" name="RING" type="BiDi"/>
+        <pin num="RSH" name="RSH" type="BiDi"/>
+        <pin num="SLEEVE" name="SLEEVE" type="BiDi"/>
+        <pin num="TIP" name="TIP" type="BiDi"/>
+        <pin num="TSH" name="TSH" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="phase_v3-eagle-import" part="C5_3.5">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C5_3.5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Xenir">
+      <uri>C:/Users/Caliphax/Documents/kicad/Xenir.lib</uri>
+    </library>
+    <library logical="phase_v3-eagle-import">
+      <uri>C:\Users\Caliphax\Documents\GitHub\Tinypico-Radio\kicad\Phase and Filter\phase_v3-eagle-import.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+6V">
+      <node ref="U3" pin="3"/>
+      <node ref="R23" pin="2"/>
+      <node ref="R20" pin="2"/>
+      <node ref="U2" pin="5"/>
+      <node ref="C13" pin="2"/>
+      <node ref="R17" pin="1"/>
+      <node ref="U3" pin="5"/>
+      <node ref="R19" pin="2"/>
+    </net>
+    <net code="2" name="Net-(C12-Pad2)">
+      <node ref="C12" pin="2"/>
+      <node ref="R21" pin="2"/>
+      <node ref="U3" pin="2"/>
+    </net>
+    <net code="3" name="Net-(C14-Pad1)">
+      <node ref="R23" pin="1"/>
+      <node ref="C15" pin="1"/>
+      <node ref="R22" pin="2"/>
+      <node ref="C14" pin="1"/>
+    </net>
+    <net code="4" name="Net-(C11-Pad1)">
+      <node ref="R16" pin="2"/>
+      <node ref="R20" pin="1"/>
+      <node ref="C11" pin="1"/>
+      <node ref="C12" pin="1"/>
+    </net>
+    <net code="5" name="Net-(C11-Pad2)">
+      <node ref="U3" pin="1"/>
+      <node ref="C11" pin="2"/>
+      <node ref="R21" pin="1"/>
+      <node ref="R22" pin="1"/>
+    </net>
+    <net code="6" name="Net-(C15-Pad2)">
+      <node ref="R24" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="U3" pin="6"/>
+    </net>
+    <net code="7" name="Net-(C16-Pad2)">
+      <node ref="R16" pin="1"/>
+      <node ref="C16" pin="2"/>
+    </net>
+    <net code="8" name="Net-(C16-Pad1)">
+      <node ref="VR3" pin="2"/>
+      <node ref="C16" pin="1"/>
+    </net>
+    <net code="9" name="Net-(R10-Pad2)">
+      <node ref="R10" pin="2"/>
+      <node ref="U1" pin="7"/>
+      <node ref="R12" pin="2"/>
+    </net>
+    <net code="10" name="Net-(C10-Pad2)">
+      <node ref="R14" pin="1"/>
+      <node ref="C10" pin="2"/>
+    </net>
+    <net code="11" name="Net-(C10-Pad1)">
+      <node ref="U3" pin="7"/>
+      <node ref="C10" pin="1"/>
+      <node ref="C14" pin="2"/>
+      <node ref="R24" pin="1"/>
+    </net>
+    <net code="12" name="GND">
+      <node ref="U3" pin="4"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="C4" pin="2"/>
+      <node ref="J1" pin="SLEEVE"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="U4" pin="4"/>
+      <node ref="C9" pin="1"/>
+      <node ref="J4" pin="1"/>
+      <node ref="R19" pin="1"/>
+      <node ref="J2" pin="SLEEVE"/>
+      <node ref="U2" pin="4"/>
+      <node ref="C13" pin="1"/>
+    </net>
+    <net code="13" name="Net-(C7-Pad2)">
+      <node ref="C7" pin="2"/>
+      <node ref="U2" pin="7"/>
+      <node ref="R15" pin="2"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="14" name="Net-(J2-PadRING)">
+      <node ref="J2" pin="RING"/>
+      <node ref="J2" pin="RSH"/>
+      <node ref="U2" pin="1"/>
+      <node ref="U2" pin="2"/>
+      <node ref="J2" pin="TIP"/>
+      <node ref="J2" pin="TSH"/>
+    </net>
+    <net code="15" name="+12V">
+      <node ref="C6" pin="1"/>
+      <node ref="C9" pin="2"/>
+      <node ref="J3" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="U3" pin="8"/>
+      <node ref="C3" pin="1"/>
+      <node ref="U1" pin="8"/>
+      <node ref="R17" pin="2"/>
+      <node ref="U4" pin="8"/>
+      <node ref="U2" pin="8"/>
+    </net>
+    <net code="16" name="Net-(R10-Pad1)">
+      <node ref="VR3" pin="3"/>
+      <node ref="R10" pin="1"/>
+    </net>
+    <net code="17" name="Net-(R13-Pad2)">
+      <node ref="R13" pin="2"/>
+      <node ref="VR3" pin="1"/>
+    </net>
+    <net code="18" name="Net-(J1-PadRING)">
+      <node ref="R1" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="J1" pin="RING"/>
+      <node ref="VR1" pin="2"/>
+      <node ref="VR1" pin="1"/>
+    </net>
+    <net code="19" name="Net-(C7-Pad1)">
+      <node ref="C7" pin="1"/>
+      <node ref="U2" pin="6"/>
+      <node ref="R14" pin="2"/>
+      <node ref="R15" pin="1"/>
+    </net>
+    <net code="20" name="Net-(R11-Pad1)">
+      <node ref="R8" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="R11" pin="1"/>
+      <node ref="R9" pin="2"/>
+    </net>
+    <net code="21" name="Net-(R5-Pad2)">
+      <node ref="R6" pin="1"/>
+      <node ref="R5" pin="2"/>
+      <node ref="U4" pin="6"/>
+    </net>
+    <net code="22" name="Net-(R2-Pad2)">
+      <node ref="R3" pin="1"/>
+      <node ref="R2" pin="2"/>
+      <node ref="U4" pin="2"/>
+    </net>
+    <net code="23" name="Net-(J1-PadTIP)">
+      <node ref="J1" pin="TIP"/>
+      <node ref="R18" pin="1"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="24" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2"/>
+      <node ref="R12" pin="1"/>
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="25" name="Net-(C1-Pad1)">
+      <node ref="U1" pin="5"/>
+      <node ref="R8" pin="2"/>
+      <node ref="C1" pin="1"/>
+    </net>
+    <net code="26" name="Net-(C5-Pad1)">
+      <node ref="U1" pin="3"/>
+      <node ref="R7" pin="2"/>
+      <node ref="C5" pin="1"/>
+    </net>
+    <net code="27" name="Net-(R18-Pad2)">
+      <node ref="R9" pin="1"/>
+      <node ref="R18" pin="2"/>
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="28" name="Net-(C4-Pad1)">
+      <node ref="VR1" pin="3"/>
+      <node ref="C4" pin="1"/>
+      <node ref="U4" pin="3"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="29" name="Net-(R13-Pad1)">
+      <node ref="R13" pin="1"/>
+      <node ref="U4" pin="7"/>
+      <node ref="R6" pin="2"/>
+    </net>
+    <net code="30" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1"/>
+      <node ref="VR2" pin="3"/>
+      <node ref="R4" pin="2"/>
+      <node ref="U4" pin="5"/>
+    </net>
+    <net code="31" name="Net-(R3-Pad2)">
+      <node ref="VR2" pin="1"/>
+      <node ref="U4" pin="1"/>
+      <node ref="R4" pin="1"/>
+      <node ref="R5" pin="1"/>
+      <node ref="VR2" pin="2"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="32" name="Net-(J1-PadTSH)">
+      <node ref="J1" pin="TSH"/>
+    </net>
+    <net code="33" name="Net-(J1-PadRSH)">
+      <node ref="J1" pin="RSH"/>
+    </net>
+  </nets>
+</export>
