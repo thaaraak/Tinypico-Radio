@@ -1,0 +1,87 @@
+{
+  "Name": "Filter Wizard Design",
+  "Description": "Filter Wizard Design",
+  "Tool": "FW",
+  "Version": "1",
+  "Design": {
+    "visitedTabs": [
+      "filter-type",
+      "specifications",
+      "components",
+      "tolerances",
+      "next-steps"
+    ],
+    "filterType": "bandPass",
+    "specifications": {
+      "gain": 0,
+      "gainUnit": "dB",
+      "passbandAttenuation": -3,
+      "passbandFrequency": 3000,
+      "stopbandAttenuation": -40,
+      "stopbandFrequency": 10000,
+      "filterResponseValue": 1,
+      "filterResponseSlider": "13",
+      "centerFrequency": 1500
+    },
+    "components": {
+      "vsPlus": 12,
+      "vsMinus": 0,
+      "optimization": "Power",
+      "optimizationPreference": "nonSpecific",
+      "compensateForGbw": false,
+      "stages": [
+        {
+          "stageLetter": "A",
+          "componentSizing": 72,
+          "gain": -1,
+          "gainEnabled": false,
+          "implementation": "deliyannisFriend",
+          "opAmps": "LT6020"
+        },
+        {
+          "stageLetter": "B",
+          "componentSizing": 77,
+          "gain": -1,
+          "gainEnabled": false,
+          "implementation": "deliyannisFriend",
+          "opAmps": "LT6020"
+        },
+        {
+          "stageLetter": "C",
+          "componentSizing": 72,
+          "gain": -1,
+          "gainEnabled": false,
+          "implementation": "deliyannisFriend",
+          "opAmps": "LT6020"
+        },
+        {
+          "stageLetter": "D",
+          "componentSizing": 81,
+          "gain": -1,
+          "gainEnabled": false,
+          "implementation": "deliyannisFriend",
+          "opAmps": "LT6020"
+        }
+      ],
+      "recommendedAmps": [],
+      "sortOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "tolerances": {
+      "resistorTolerance": "1%",
+      "capacitorTolerance": "5%",
+      "inductorTolerance": "5%",
+      "opAmpGbwTolerance": "20%",
+      "resistorPreferredSeries": "E6",
+      "capacitorPreferredSeries": "E6",
+      "inductorPreferredSeries": "E12"
+    },
+    "nextSteps": {}
+  },
+  "CreatedDate": "2020-05-03 01:38:52 PM",
+  "UpdatedDate": "2020-05-03 01:38:52 PM"
+}
